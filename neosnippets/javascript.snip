@@ -1,0 +1,90 @@
+snippet variable-definition
+alias v
+options     head
+	var ${1} = ${2}
+
+snippet function-inline
+alias f
+options     word
+	function${1}(${2}) {${3}}
+
+snippet function-with-newline
+alias fl
+options     word
+	function${1}(${2}) {${3}
+	}
+
+snippet function-with-newline-and-comma
+alias fc
+options     word
+	${1}function(${2}) {${3}
+	},
+
+snippet use-strict
+alias us
+options     head
+	'use strict';
+
+snippet require-call
+alias r 
+options     word
+	require('${1}')
+
+snippet require-definition
+alias re
+options     head
+	var ${1} = require('$1')
+
+snippet gulp-task
+alias gulpt
+options     head
+	gulp.task('${1}', ${2})
+
+snippet gulp-log
+alias gl
+options     head
+	gutil.log(${1})
+
+snippet shabang
+alias sh
+options     head
+	#!/usr/bin/env node
+
+snippet jsx-header
+alias jsx
+options     head
+	/** @jsx React.DOM */
+
+snippet module-exports
+alias me
+options     head
+	module.exports = ${1}
+
+snippet if-statement-with-brackets
+alias if
+options     head
+	if (${1}) {${2}
+	}
+
+snippet else-statement-with-brackets
+alias e
+options     head
+	else {${1}
+	}
+
+snippet mocha-describe
+alias desc
+options     head
+	describe('${1}', function(${2}) {${3}
+	})
+
+snippet mocha-it
+alias it
+options     head
+	it('${1}', function(${2}) {${3}
+	})
+
+snippet console-log
+alias cl
+options     head
+	console.log(${1})
