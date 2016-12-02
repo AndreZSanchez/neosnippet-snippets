@@ -15,34 +15,29 @@ abbr        template <T>
 
 snippet     class
 abbr        class {}
-    class ${1:#:name} {
-        ${2}
+    class ${1:#:name} {${2}
     public:
         $1(${3});
     };
-    $1::$1($3) {
-        ${0:TARGET}
+    $1::$1($3) {${0:TARGET}
     }
 
 snippet     class-without-constructor
 abbr        class {}
-    class ${1:#:name} {
-        ${2}
+    class ${1:#:name} {${2}
     };
 
 snippet     try
 abbr        try catch
-    try {
-        ${1:TARGET}
-    } catch (${2:e:xception}) {
-        ${3}
+    try {${1:TARGET}
+    }
+    catch (${2:e:xception}) {${3}
     }
 
 # range based for ( C++11 feature )
-snippet     for_CPP11
+snippet     for11
 abbr        for (:) {}
-    for (${1:auto&& }${2:var} : ${3:container}) {
-        ${0:TARGET}
+    for (${1:auto&& }${2:var} : ${3:container}) {${0:TARGET}
     }
 
 # lambda expression ( C++11 feature )
@@ -53,22 +48,23 @@ abbr        [](){}
 # scoped enumeration ( C++11 feature )
 snippet     enum_scoped
 abbr        enum struct {}
-    enum struct { ${1:TARGET} }
+    enum struct {${1:TARGET}
+    }
 
 # static assert ( C++11 feature )
 snippet     static_assert
 abbr        static_assert(,"")
-    static_assert( ${1}, "${2}" );${0}
+    static_assert(${1}, "${2}");${0}
 
 delete      namespace
 snippet     namespace
 abbr        namespace {}
 options     head
-    namespace ${1:#:name} {
-        ${0:TARGET}
+    namespace ${1:#:name} {${0:TARGET}
     } // namespace $1
 
 snippet     static_cast
+alias       sc
 abbr        static_cast<>()
     static_cast<${1}>(${2})${0}
 
